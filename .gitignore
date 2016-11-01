@@ -1,5 +1,6 @@
 *.class
 
+Test.java
 # Package Files #
 
 *.war
