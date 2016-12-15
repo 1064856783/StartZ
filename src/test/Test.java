@@ -112,7 +112,7 @@ public class Test {
 		// 对象加整数,x 进行了自动拆箱,变成了int 型 和5进行加法运算后再将和进行装箱赋给x。
 		y = y + 5; // 是通过Integer.intValue() 方法进行拆箱
 */
-		  System.out.println("# xml file's path[xml\u6587\u4ef6\u7684\u8def\u5f84] # xml scanning interval time[\u626b\u63cf\u95f4\u9694\u65f6\u957f] # project start time[\u9879\u76ee\u542f\u52a8\u65f6\u95f4]");
+		  System.out.println("# xm l file's path[xml\u6587\u4ef6\u7684\u8def\u5f84] # xml scanning interval time[\u626b\u63cf\u95f4\u9694\u65f6\u957f] # project start time[\u9879\u76ee\u542f\u52a8\u65f6\u95f4]");
 	}
 
 
