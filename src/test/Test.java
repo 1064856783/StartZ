@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Properties;
+
 public class Test {
    /* int num=1;
 	class Inclass{
@@ -8,6 +10,14 @@ public class Test {
 			System.out.println("内部类!+外部类属性num:"+num);
 		}
 	}*/
+	/**
+	 * @param args
+	 * @throws Exception
+	 */
+	/**
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 	/*	System.out.println("外部类!");
 		Test.Inclass ic =new Test().new Inclass();
@@ -111,8 +121,17 @@ public class Test {
 		Integer y = 5;  
 		// 对象加整数,x 进行了自动拆箱,变成了int 型 和5进行加法运算后再将和进行装箱赋给x。
 		y = y + 5; // 是通过Integer.intValue() 方法进行拆箱
-*/
-		  System.out.println("# xm l file's path[xml\u6587\u4ef6\u7684\u8def\u5f84] # xml scanning interval time[\u626b\u63cf\u95f4\u9694\u65f6\u957f] # project start time[\u9879\u76ee\u542f\u52a8\u65f6\u95f4]");
+*/		
+		/*Properties properties = System.getProperties();
+		properties.list(System.out);
+		*/
+		
+		Runtime runtime = Runtime.getRuntime();
+//		Process process = runtime.exec("E:\\Windows\\notepad.exe");
+//		Thread.sleep(1000);
+//		process.destroy();
+		System.out.println(runtime.freeMemory()+" ! "+runtime.maxMemory()+" ! "+runtime.totalMemory());
+		
 	}
 
 
