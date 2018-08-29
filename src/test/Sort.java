@@ -3,6 +3,7 @@ package test;
 import java.util.Arrays;
 
 public class Sort {
+//	选择排序
 	public static void selectSort(int[] arr) { // 每次内层循环比较都交换数据 内存开销大
 		int temp = 0;
 		for (int i = 0; i < arr.length - 1; i++) {
@@ -15,7 +16,7 @@ public class Sort {
 			}
 		}
 	}
-
+//	选择排序优化
 	public static void selectSortBest(int[] arr) { // 减少数据的交换 节省内存
 		int minIndex = 0;
 		int temp = 0;
@@ -37,7 +38,7 @@ public class Sort {
 			}
 		}
 	}
-
+//	冒泡排序
 	private static void bubbleSort(int[] arr) {
 		int temp = 0;
 		for (int i = 0; i < arr.length - 1; i++) {
@@ -50,7 +51,7 @@ public class Sort {
 			}
 		}
 	}
-
+//	折半查找
 	public static int halfSearch(int[] arr, int target) {
 		int min = 0;
 		int max = arr.length - 1;
