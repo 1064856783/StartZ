@@ -45,7 +45,7 @@ public class QueryHLR {
 //			StringBuilder tempList = new StringBuilder();
 			List<String> resultList = new ArrayList<String>();
 //			long startTime = System.currentTimeMillis(); System.currentTimeMillis()-startTime > 300000//最多查询5分钟
-			while (readFileLinesList.size() > 1) {
+			while (readFileLinesList.size() >= 1) {
 //				System.out.println("While!!");
 				for (int i = 0; i < readFileLinesList.size(); i++) {
 //					System.out.println("For!!");
@@ -59,7 +59,11 @@ public class QueryHLR {
 					String[] arr = hlrIn.split(":");
 					if (hlrIn.length() > 7 && arr.length >= 2 && StringUtils.isNotBlank(arr[1])) {
 						readFileLinesList.remove(i);
-						resultList.add(hlrIn);
+						String temp = "INSERT INTO `yyvoinvdb1`.`bds_mobile_prefix`\r\n"
+								+ "VALUES ('"+arr[0]+"0000', '"+arr[0]+"9999', '"+arr[1]+"', "
+								+ "'*', '1', '7', '0', '2001-01-01 00:00:00', '2037-01-01 00:00:00', '');";
+						
+						resultList.add(temp);
 						continue;
 					}
 					hlrIn =hlrIn.replaceAll("[:]", "");
@@ -74,7 +78,10 @@ public class QueryHLR {
 					String region = retHtml.substring(sNum, sNum + 4).replaceAll("[iv=\"|<|/TD]", "");
 					if(StringUtils.isNotBlank(region)) {
 						readFileLinesList.remove(i);
-						resultList.add(hlrIn + ":" + region);
+						String temp = "INSERT INTO `yyvoinvdb1`.`bds_mobile_prefix`\r\n"
+								+ "VALUES ('"+hlrIn+"0000', '"+hlrIn+"9999', '"+region+"', "
+								+ "'*', '1', '7', '0', '2001-01-01 00:00:00', '2037-01-01 00:00:00', '');";
+						resultList.add(temp);
 					}
 					
 				}

@@ -72,14 +72,41 @@ public class Sort {
 		}
 
 	}
+//	插入排序
+	public static void insertionsort(int[] a) {
+		int temp = 0;
+		for (int i = 1; i < a.length; i++) {
+			// 只能从当前索引往前循环，因为索引前的数组皆为有序的，索引只要确定当前索引的数据的为止即可
+			for (int j = i; j > 0 && a[j] < a[j - 1]; j--) {
+				temp = a[j];
+				a[j] = a[j - 1];
+				a[j - 1] = temp;
+			}
+		}
 
+	}
+	
+	 public static void doInsertSort(int[] a){
+	        for(int index = 1; index<a.length; index++){//外层向右的index，即作为比较对象的数据的index
+	            int temp = a[index];//用作比较的数据
+	            int leftindex = index-1;
+	            while(leftindex>=0 && a[leftindex]>temp){//当比到最左边或者遇到比temp小的数据时，结束循环
+	                a[leftindex+1] = a[leftindex];
+	                leftindex--;
+	            }
+	            a[leftindex+1] = temp;//把temp放到空位上
+	        }
+	    }
+	
 	public static void main(String[] args) {
 		int[] arr = { 3, 4, 1, 2, 6, 5 };
 		// selectSort(arr);
 		// selectSortBest(arr);
-		bubbleSort(arr);
+//		bubbleSort(arr);
+//		doInsertSort(arr);
+		insertionsort(arr);
 		System.out.print(Arrays.toString(arr));
-		int index = halfSearch(arr, 7);
+		int index = halfSearch(arr, 3);
 		System.out.println("\tindex:" + index);
 
 	}
