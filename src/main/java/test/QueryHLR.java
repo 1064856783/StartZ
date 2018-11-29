@@ -2,6 +2,7 @@ package test;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.LineNumberReader;
@@ -13,6 +14,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
+
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.lang.StringUtils;
@@ -28,7 +31,27 @@ public class QueryHLR {
 		 * getMethodName()+"]方法"); StackTraceElement[]
 		 * stackTrace=Thread.currentThread().getStackTrace(); new Test06().test();
 		 */
-		InputStream read = new FileInputStream("E:\\new.txt");
+		Scanner in =new Scanner(System.in);
+		String filePath = "E:\\";
+		String fileName = "new.txt";
+		System.err.print("请输入查询区号TXT文件的名称,按回车完成输入：");
+		String tempInput = in.next();
+		if (StringUtils.isNotBlank(tempInput)) {
+			fileName = tempInput;
+		}
+		System.err.println("输入的文件名为："+fileName);
+		StringBuilder readPath = new StringBuilder(filePath+fileName.trim()+".txt");
+		System.out.println("导入文件："+readPath);
+		InputStream read = null;
+		try {
+			read = new FileInputStream(readPath.toString());
+		} catch (FileNotFoundException e) {
+			System.err.println("程序退出,请重试："+e.getMessage());
+			return ;
+		}catch (Exception e) {
+			System.err.println("未知错误,程序退出,请重试："+e.getMessage());
+			return ;
+		}
 		List<String> resultList = new ArrayList<String>();
 		List<String> errorList = new ArrayList<String>();
 		String[] readFileLines = readLineStream(read);
@@ -137,6 +160,12 @@ public class QueryHLR {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddHH24mmss");
+			String curTime =sf.format(new Date(System.currentTimeMillis()));
+			writeFile(filePath+"result_"+curTime+".txt", resultList);
+			if (errorList.size()>0) {
+				writeFile(filePath+"error_"+curTime+".txt", errorList);
+			}
 			System.out.println("-----------------------");
 			System.out.println("总共数量："+orginNum);
 			System.out.println("-----------------------");
@@ -144,13 +173,10 @@ public class QueryHLR {
 			System.out.println("-----------------------");
 			System.out.println("失败数量："+errorList.size());
 			System.out.println("-----------------------");
-			SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddHH24mmss");
-//			String s =sf.format(new Date(System.currentTimeMillis()));
-			writeFile("E:\\result_"+sf.format(new Date(System.currentTimeMillis()))+".txt", resultList);
-			if (errorList.size()>0) {
-				writeFile("E:\\error_"+sf.format(new Date(System.currentTimeMillis()))+".txt", errorList);
-			}
 			System.out.println("查询完成！");
+			System.out.println("-----------------------");
+			System.out.println("文件生成目录："+filePath+"\n时间戳为："+curTime);
+			System.out.println("-----------------------");
 			read.close();
 		}
 
