@@ -19,6 +19,7 @@ import java.util.Scanner;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.math.NumberUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -99,7 +100,7 @@ public class QueryHLR {
 						resultList.add(temp);
 						continue;
 					}
-					hlrIn = hlrIn.replaceAll("[:]", "");
+					hlrIn = hlrIn.replaceAll("[:]", "").trim();
 					GetMethod getMethod = new GetMethod("http://www.ip138.com:8080/search.asp?action=mobile&mobile=" + hlrIn);
 					getMethod.setRequestHeader("CharSet", "GBK");
 					try {
@@ -110,7 +111,14 @@ public class QueryHLR {
 										+ "		<TD align=\"center\" class=tdc2>";
 						int sNum = retHtml.indexOf(sIndex) + sIndex.length();
 						String region = retHtml.substring(sNum, sNum + 4).replaceAll("[iv=\"|<|/TD]", "");
-						if(StringUtils.isNotBlank(region)) {
+						if(StringUtils.isBlank(region)) {
+							String sIndex2 = "<TD align=\"center\">Çø ºÅ</TD>\r\n" + 
+									"<!-- <td></td> --><TD align=\"center\" class=tdc2>";
+							int sNum2 = retHtml.indexOf(sIndex2) + sIndex2.length();
+							region = retHtml.substring(sNum2, sNum2 + 4).replaceAll("[iv=\"|<|/TD]", "");
+						}
+						
+						if(StringUtils.isNotBlank(region)&&NumberUtils.isDigits(region)) {
 							readFileLinesList.remove(i);
 							String temp = "INSERT INTO `yyvoinvdb1`.`bds_mobile_prefix`\r\n"
 									+ "VALUES ('"+hlrIn+"0000', '"+hlrIn+"9999', '"+region+"', "
