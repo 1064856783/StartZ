@@ -103,6 +103,7 @@ public class QueryHLR {
 					hlrIn = hlrIn.replaceAll("[:]", "").trim();
 					GetMethod getMethod = new GetMethod("http://www.ip138.com:8080/search.asp?action=mobile&mobile=" + hlrIn);
 					getMethod.setRequestHeader("CharSet", "GBK");
+					getMethod.setRequestHeader("User-Agent","Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0");
 					try {
 						client.executeMethod(getMethod);
 						String retHtml = new String(getMethod.getResponseBodyAsString().getBytes("ISO-8859-1"), "gb2312");
