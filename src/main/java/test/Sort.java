@@ -3,8 +3,8 @@ package test;
 import java.util.Arrays;
 
 public class Sort {
-//	Ñ¡ÔñÅÅĞò
-	public static void selectSort(int[] arr) { // Ã¿´ÎÄÚ²ãÑ­»·±È½Ï¶¼½»»»Êı¾İ ÄÚ´æ¿ªÏú´ó
+//	é€‰æ‹©æ’åº
+	public static void selectSort(int[] arr) { // æ¯æ¬¡å†…å±‚å¾ªç¯æ¯”è¾ƒéƒ½äº¤æ¢æ•°æ® å†…å­˜å¼€é”€å¤§
 		int temp = 0;
 		for (int i = 0; i < arr.length - 1; i++) {
 			for (int j = i + 1; j < arr.length; j++) {
@@ -16,29 +16,29 @@ public class Sort {
 			}
 		}
 	}
-//	Ñ¡ÔñÅÅĞòÓÅ»¯
-	public static void selectSortBest(int[] arr) { // ¼õÉÙÊı¾İµÄ½»»» ½ÚÊ¡ÄÚ´æ
+//	é€‰æ‹©æ’åºä¼˜åŒ–
+	public static void selectSortBest(int[] arr) { // å‡å°‘æ•°æ®çš„äº¤æ¢ èŠ‚çœå†…å­˜
 		int minIndex = 0;
 		int temp = 0;
 		if ((arr == null) || (arr.length == 0))
 			return;
 		for (int i = 0; i < arr.length - 1; i++) {
-			minIndex = i;// ÎŞĞòÇøµÄ×îĞ¡Êı¾İÊı×éÏÂ±ê
+			minIndex = i;// æ— åºåŒºçš„æœ€å°æ•°æ®æ•°ç»„ä¸‹æ ‡
 			for (int j = i + 1; j < arr.length; j++) {
-				// ÔÚÎŞĞòÇøÖĞÕÒµ½×îĞ¡Êı¾İ²¢±£´æÆäÊı×éÏÂ±ê
+				// åœ¨æ— åºåŒºä¸­æ‰¾åˆ°æœ€å°æ•°æ®å¹¶ä¿å­˜å…¶æ•°ç»„ä¸‹æ ‡
 				if (arr[j] < arr[minIndex]) {
 					minIndex = j;
 				}
 			}
 			if (minIndex != i) {
-				// Èç¹û²»ÊÇÎŞĞòÇøµÄ×îĞ¡ÖµÎ»ÖÃ²»ÊÇÄ¬ÈÏµÄµÚÒ»¸öÊı¾İ£¬Ôò½»»»Ö®¡£
+				// å¦‚æœä¸æ˜¯æ— åºåŒºçš„æœ€å°å€¼ä½ç½®ä¸æ˜¯é»˜è®¤çš„ç¬¬ä¸€ä¸ªæ•°æ®ï¼Œåˆ™äº¤æ¢ä¹‹ã€‚
 				temp = arr[i];
 				arr[i] = arr[minIndex];
 				arr[minIndex] = temp;
 			}
 		}
 	}
-//	Ã°ÅİÅÅĞò
+//	å†’æ³¡æ’åº
 	private static void bubbleSort(int[] arr) {
 		int temp = 0;
 		for (int i = 0; i < arr.length - 1; i++) {
@@ -51,7 +51,7 @@ public class Sort {
 			}
 		}
 	}
-//	ÕÛ°ë²éÕÒ
+//	æŠ˜åŠæŸ¥æ‰¾
 	public static int halfSearch(int[] arr, int target) {
 		int min = 0;
 		int max = arr.length - 1;
@@ -72,11 +72,11 @@ public class Sort {
 		}
 
 	}
-//	²åÈëÅÅĞò
+//	æ’å…¥æ’åº
 	public static void insertionsort(int[] a) {
 		int temp = 0;
 		for (int i = 1; i < a.length; i++) {
-			// Ö»ÄÜ´Óµ±Ç°Ë÷ÒıÍùÇ°Ñ­»·£¬ÒòÎªË÷ÒıÇ°µÄÊı×é½ÔÎªÓĞĞòµÄ£¬Ë÷ÒıÖ»ÒªÈ·¶¨µ±Ç°Ë÷ÒıµÄÊı¾İµÄÎªÖ¹¼´¿É
+			// åªèƒ½ä»å½“å‰ç´¢å¼•å¾€å‰å¾ªç¯ï¼Œå› ä¸ºç´¢å¼•å‰çš„æ•°ç»„çš†ä¸ºæœ‰åºçš„ï¼Œç´¢å¼•åªè¦ç¡®å®šå½“å‰ç´¢å¼•çš„æ•°æ®çš„ä¸ºæ­¢å³å¯
 			for (int j = i; j > 0 && a[j] < a[j - 1]; j--) {
 				temp = a[j];
 				a[j] = a[j - 1];
@@ -87,14 +87,14 @@ public class Sort {
 	}
 	
 	 public static void doInsertSort(int[] a){
-	        for(int index = 1; index<a.length; index++){//Íâ²ãÏòÓÒµÄindex£¬¼´×÷Îª±È½Ï¶ÔÏóµÄÊı¾İµÄindex
-	            int temp = a[index];//ÓÃ×÷±È½ÏµÄÊı¾İ
+	        for(int index = 1; index<a.length; index++){//å¤–å±‚å‘å³çš„indexï¼Œå³ä½œä¸ºæ¯”è¾ƒå¯¹è±¡çš„æ•°æ®çš„index
+	            int temp = a[index];//ç”¨ä½œæ¯”è¾ƒçš„æ•°æ®
 	            int leftindex = index-1;
-	            while(leftindex>=0 && a[leftindex]>temp){//µ±±Èµ½×î×ó±ß»òÕßÓöµ½±ÈtempĞ¡µÄÊı¾İÊ±£¬½áÊøÑ­»·
+	            while(leftindex>=0 && a[leftindex]>temp){//å½“æ¯”åˆ°æœ€å·¦è¾¹æˆ–è€…é‡åˆ°æ¯”tempå°çš„æ•°æ®æ—¶ï¼Œç»“æŸå¾ªç¯
 	                a[leftindex+1] = a[leftindex];
 	                leftindex--;
 	            }
-	            a[leftindex+1] = temp;//°Ñtemp·Åµ½¿ÕÎ»ÉÏ
+	            a[leftindex+1] = temp;//æŠŠtempæ”¾åˆ°ç©ºä½ä¸Š
 	        }
 	    }
 	

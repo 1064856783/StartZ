@@ -10,28 +10,28 @@ import java.util.concurrent.Executors;
 
 public class SimpleThreadLocal<T> {
 	/**
-	 * KeyÎªÏß³Ì¶ÔÏó£¬ValueÎª´«ÈëµÄÖµ¶ÔÏó
+	 * Keyä¸ºçº¿ç¨‹å¯¹è±¡ï¼ŒValueä¸ºä¼ å…¥çš„å€¼å¯¹è±¡
 	 */
 	private static Map<Thread, Object> valueMap = Collections.synchronizedMap(new HashMap<Thread, Object>());
 
 	/**
-	 * ÉèÖµ
+	 * è®¾å€¼
 	 * 
-	 * @param value Map¼üÖµ¶ÔµÄvalue
+	 * @param value Mapé”®å€¼å¯¹çš„value
 	 */
 	public void set(T value) {
 		valueMap.put(Thread.currentThread(), value);
 	}
 
 	/**
-	 * È¡Öµ
+	 * å–å€¼
 	 * 
 	 * @return
 	 */
 	public T get() {
 		Thread currentThread = Thread.currentThread();
-		// ·µ»Øµ±Ç°Ïß³Ì¶ÔÓ¦µÄ±äÁ¿
-		T t = (T) valueMap.get(currentThread); // Èç¹ûµ±Ç°Ïß³ÌÔÚMapÖĞ²»´æÔÚ£¬Ôò½«µ±Ç°Ïß³Ì´æ´¢µ½MapÖĞ
+		// è¿”å›å½“å‰çº¿ç¨‹å¯¹åº”çš„å˜é‡
+		T t = (T) valueMap.get(currentThread); // å¦‚æœå½“å‰çº¿ç¨‹åœ¨Mapä¸­ä¸å­˜åœ¨ï¼Œåˆ™å°†å½“å‰çº¿ç¨‹å­˜å‚¨åˆ°Mapä¸­
 		if (t == null && !valueMap.containsKey(currentThread)) {
 			t = initialValue();
 			valueMap.put(currentThread, t);
@@ -51,9 +51,9 @@ public class SimpleThreadLocal<T> {
 		SimpleThreadLocal<List<String>> threadLocal = new SimpleThreadLocal<>();
 		new Thread(() -> {
 			List<String> params = new ArrayList<>(3);
-			params.add("ÕÅÈı");
-			params.add("ÀîËÄ");
-			params.add("ÍõÎå");
+			params.add("å¼ ä¸‰");
+			params.add("æå››");
+			params.add("ç‹äº”");
 			threadLocal.set(params);
 			System.out.println(Thread.currentThread().getName());
 			threadLocal.get().forEach(param -> System.out.println(param));
@@ -77,7 +77,7 @@ public class SimpleThreadLocal<T> {
 	private static ThreadLocal<String> threadLocal3 = new ThreadLocal<>(); 
 	
 	public static void main(String[] args) {
-		// Ïß³Ì³Ø±äÁ¿Ö¸¶¨Ò»¸öÏß³Ì
+		// çº¿ç¨‹æ± å˜é‡æŒ‡å®šä¸€ä¸ªçº¿ç¨‹
 		ExecutorService executorService = Executors.newFixedThreadPool(1);
 		executorService.execute(() -> {
 			threadLocal1.set("123");

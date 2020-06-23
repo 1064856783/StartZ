@@ -12,10 +12,10 @@ class SaleTicket extends Thread {
 	public void run() {
 		while (true) {
 			if (num > 0) {
-				System.out.println("售出了第" + num + "张票!");
+				System.out.println("鍞嚭浜嗙" + num + "寮犵エ!");
 				num--;
 			} else {
-				System.out.println("售罄!");
+				System.out.println("鍞絼!");
 				break;
 			}
 		}
@@ -24,9 +24,9 @@ class SaleTicket extends Thread {
 
 public class SaleTicketThread {
 	public static void main(String[] args) {
-		SaleTicket saleTicket1 = new SaleTicket("窗口1");
-		SaleTicket saleTicket2 = new SaleTicket("窗口2");
-		SaleTicket saleTicket3 = new SaleTicket("窗口3");
+		SaleTicket saleTicket1 = new SaleTicket("绐楀彛1");
+		SaleTicket saleTicket2 = new SaleTicket("绐楀彛2");
+		SaleTicket saleTicket3 = new SaleTicket("绐楀彛3");
 
 		saleTicket1.start();
 		saleTicket2.start();

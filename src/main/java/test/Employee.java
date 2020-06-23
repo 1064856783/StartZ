@@ -5,23 +5,23 @@ public class Employee{
    int age;
    String designation;
    double salary;
-   // Employee ÀàµÄ¹¹ÔìÆ÷
+   // Employee ç±»çš„æ„é€ å™¨
    public Employee(String name){
       this.name = name;
    }
-   // ÉèÖÃageµÄÖµ
+   // è®¾ç½®ageçš„å€¼
    public void empAge(int empAge){
       age =  empAge;
    }
-   /* ÉèÖÃdesignationµÄÖµ*/
+   /* è®¾ç½®designationçš„å€¼*/
    public void empDesignation(String empDesig){
       designation = empDesig;
    }
-   /* ÉèÖÃsalaryµÄÖµ*/
+   /* è®¾ç½®salaryçš„å€¼*/
    public void empSalary(double empSalary){
       salary = empSalary;
    }
-   /* ´òÓ¡ĞÅÏ¢ */
+   /* æ‰“å°ä¿¡æ¯ */
    public void printEmployee(){
       System.out.println("Name:"+ name );
       System.out.println("Age:" + age );
@@ -30,11 +30,11 @@ public class Employee{
    }
    
    public static void main(String args[]){
-	      /* Ê¹ÓÃ¹¹ÔìÆ÷´´½¨Á½¸ö¶ÔÏó */
+	      /* ä½¿ç”¨æ„é€ å™¨åˆ›å»ºä¸¤ä¸ªå¯¹è±¡ */
 	      Employee empOne = new Employee("James Smith");
 	      Employee empTwo = new Employee("Mary Anne");
 
-	      // µ÷ÓÃÕâÁ½¸ö¶ÔÏóµÄ³ÉÔ±·½·¨
+	      // è°ƒç”¨è¿™ä¸¤ä¸ªå¯¹è±¡çš„æˆå‘˜æ–¹æ³•
 	      empOne.empAge(26);
 	      empOne.empDesignation("Senior Software Engineer");
 	      empOne.empSalary(1000);

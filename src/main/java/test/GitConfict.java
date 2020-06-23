@@ -3,8 +3,8 @@ package test;
 public class GitConfict {
 	
 	public static void main(String[] args) {
-		System.out.println("±¾µØÐÞ¸ÄµÄ");
-		System.out.println("gitÐÞ¸ÄµÄ");
+		System.out.println("æœ¬åœ°ä¿®æ”¹çš„");
+		System.out.println("gitä¿®æ”¹çš„");
 	}
 
 }

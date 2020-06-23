@@ -7,7 +7,7 @@ public class Test {
 	class Inclass{
 		public void testInclass() throws Exception {
 			
-			System.out.println("ÄÚ²¿Àà!+Íâ²¿ÀàÊôĞÔnum:"+num);
+			System.out.println("å†…éƒ¨ç±»!+å¤–éƒ¨ç±»å±æ€§num:"+num);
 		}
 	}*/
 	/**
@@ -19,7 +19,7 @@ public class Test {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-	/*	System.out.println("Íâ²¿Àà!");
+	/*	System.out.println("å¤–éƒ¨ç±»!");
 		Test.Inclass ic =new Test().new Inclass();
 		ic.testInclass();*/
 	/*	String s="!123!  !abc!  !DEF!";
@@ -37,34 +37,34 @@ public class Test {
 		
 /*		String os_name = System.getProperty("os.arch");
 		System.out.println(os_name + System.getenv("Java_Home"));
-		System.out.println("java°æ±¾ºÅ£º" + System.getProperty("java.version")); // java°æ±¾ºÅ
-		System.out.println("JavaÌá¹©ÉÌÃû³Æ£º" + System.getProperty("java.vendor")); // JavaÌá¹©ÉÌÃû³Æ
-		System.out.println("JavaÌá¹©ÉÌÍøÕ¾£º" + System.getProperty("java.vendor.url")); // JavaÌá¹©ÉÌÍøÕ¾
-		System.out.println("jreÄ¿Â¼£º" + System.getProperty("java.home")); // Java£¬Å¶£¬Ó¦¸ÃÊÇjreÄ¿Â¼
-		System.out.println("JavaĞéÄâ»ú¹æ·¶°æ±¾ºÅ£º" + System.getProperty("java.vm.specification.version")); // JavaĞéÄâ»ú¹æ·¶°æ±¾ºÅ
-		System.out.println("JavaĞéÄâ»ú¹æ·¶Ìá¹©ÉÌ£º" + System.getProperty("java.vm.specification.vendor")); // JavaĞéÄâ»ú¹æ·¶Ìá¹©ÉÌ
-		System.out.println("JavaĞéÄâ»ú¹æ·¶Ãû³Æ£º" + System.getProperty("java.vm.specification.name")); // JavaĞéÄâ»ú¹æ·¶Ãû³Æ
-		System.out.println("JavaĞéÄâ»ú°æ±¾ºÅ£º" + System.getProperty("java.vm.version")); // JavaĞéÄâ»ú°æ±¾ºÅ
-		System.out.println("JavaĞéÄâ»úÌá¹©ÉÌ£º" + System.getProperty("java.vm.vendor")); // JavaĞéÄâ»úÌá¹©ÉÌ
-		System.out.println("JavaĞéÄâ»úÃû³Æ£º" + System.getProperty("java.vm.name")); // JavaĞéÄâ»úÃû³Æ
-		System.out.println("Java¹æ·¶°æ±¾ºÅ£º" + System.getProperty("java.specification.version")); // Java¹æ·¶°æ±¾ºÅ
-		System.out.println("Java¹æ·¶Ìá¹©ÉÌ£º" + System.getProperty("java.specification.vendor")); // Java¹æ·¶Ìá¹©ÉÌ
-		System.out.println("Java¹æ·¶Ãû³Æ£º" + System.getProperty("java.specification.name")); // Java¹æ·¶Ãû³Æ
-		System.out.println("JavaÀà°æ±¾ºÅ£º" + System.getProperty("java.class.version")); // JavaÀà°æ±¾ºÅ
-		System.out.println("JavaÀàÂ·¾¶£º" + System.getProperty("java.class.path")); // JavaÀàÂ·¾¶
-		System.out.println("Java libÂ·¾¶£º" + System.getProperty("java.library.path")); // Java libÂ·¾¶
-		System.out.println("JavaÊäÈëÊä³öÁÙÊ±Â·¾¶£º" + System.getProperty("java.io.tmpdir")); // JavaÊäÈëÊä³öÁÙÊ±Â·¾¶
-		System.out.println("Java±àÒëÆ÷£º" + System.getProperty("java.compiler")); // Java±àÒëÆ÷
-		System.out.println("JavaÖ´ĞĞÂ·¾¶£º" + System.getProperty("java.ext.dirs")); // JavaÖ´ĞĞÂ·¾¶
-		System.out.println("²Ù×÷ÏµÍ³Ãû³Æ£º" + System.getProperty("os.name")); // ²Ù×÷ÏµÍ³Ãû³Æ
-		System.out.println("²Ù×÷ÏµÍ³µÄ¼Ü¹¹£º" + System.getProperty("os.arch")); // ²Ù×÷ÏµÍ³µÄ¼Ü¹¹
-		System.out.println("²Ù×÷ÏµÍ³°æ±¾ºÅ£º" + System.getProperty("os.version")); // ²Ù×÷ÏµÍ³°æ±¾ºÅ
-		System.out.println("ÎÄ¼ş·Ö¸ô·û£º" + System.getProperty("file.separator")); // ÎÄ¼ş·Ö¸ô·û
-		System.out.println("Â·¾¶·Ö¸ô·û£º" + System.getProperty("path.separator")); // Â·¾¶·Ö¸ô·û
-		System.out.println("Ö±Ïß·Ö¸ô·û£º" + System.getProperty("line.separator")); // Ö±Ïß·Ö¸ô·û
-		System.out.println("²Ù×÷ÏµÍ³ÓÃ»§Ãû£º" + System.getProperty("user.name")); // ÓÃ»§Ãû
-		System.out.println("²Ù×÷ÏµÍ³ÓÃ»§µÄÖ÷Ä¿Â¼£º" + System.getProperty("user.home")); // ÓÃ»§µÄÖ÷Ä¿Â¼
-		System.out.println("µ±Ç°³ÌĞòËùÔÚÄ¿Â¼£º" + System.getProperty("user.dir")); // µ±Ç°³ÌĞòËùÔÚÄ¿Â¼
+		System.out.println("javaç‰ˆæœ¬å·ï¼š" + System.getProperty("java.version")); // javaç‰ˆæœ¬å·
+		System.out.println("Javaæä¾›å•†åç§°ï¼š" + System.getProperty("java.vendor")); // Javaæä¾›å•†åç§°
+		System.out.println("Javaæä¾›å•†ç½‘ç«™ï¼š" + System.getProperty("java.vendor.url")); // Javaæä¾›å•†ç½‘ç«™
+		System.out.println("jreç›®å½•ï¼š" + System.getProperty("java.home")); // Javaï¼Œå“¦ï¼Œåº”è¯¥æ˜¯jreç›®å½•
+		System.out.println("Javaè™šæ‹Ÿæœºè§„èŒƒç‰ˆæœ¬å·ï¼š" + System.getProperty("java.vm.specification.version")); // Javaè™šæ‹Ÿæœºè§„èŒƒç‰ˆæœ¬å·
+		System.out.println("Javaè™šæ‹Ÿæœºè§„èŒƒæä¾›å•†ï¼š" + System.getProperty("java.vm.specification.vendor")); // Javaè™šæ‹Ÿæœºè§„èŒƒæä¾›å•†
+		System.out.println("Javaè™šæ‹Ÿæœºè§„èŒƒåç§°ï¼š" + System.getProperty("java.vm.specification.name")); // Javaè™šæ‹Ÿæœºè§„èŒƒåç§°
+		System.out.println("Javaè™šæ‹Ÿæœºç‰ˆæœ¬å·ï¼š" + System.getProperty("java.vm.version")); // Javaè™šæ‹Ÿæœºç‰ˆæœ¬å·
+		System.out.println("Javaè™šæ‹Ÿæœºæä¾›å•†ï¼š" + System.getProperty("java.vm.vendor")); // Javaè™šæ‹Ÿæœºæä¾›å•†
+		System.out.println("Javaè™šæ‹Ÿæœºåç§°ï¼š" + System.getProperty("java.vm.name")); // Javaè™šæ‹Ÿæœºåç§°
+		System.out.println("Javaè§„èŒƒç‰ˆæœ¬å·ï¼š" + System.getProperty("java.specification.version")); // Javaè§„èŒƒç‰ˆæœ¬å·
+		System.out.println("Javaè§„èŒƒæä¾›å•†ï¼š" + System.getProperty("java.specification.vendor")); // Javaè§„èŒƒæä¾›å•†
+		System.out.println("Javaè§„èŒƒåç§°ï¼š" + System.getProperty("java.specification.name")); // Javaè§„èŒƒåç§°
+		System.out.println("Javaç±»ç‰ˆæœ¬å·ï¼š" + System.getProperty("java.class.version")); // Javaç±»ç‰ˆæœ¬å·
+		System.out.println("Javaç±»è·¯å¾„ï¼š" + System.getProperty("java.class.path")); // Javaç±»è·¯å¾„
+		System.out.println("Java libè·¯å¾„ï¼š" + System.getProperty("java.library.path")); // Java libè·¯å¾„
+		System.out.println("Javaè¾“å…¥è¾“å‡ºä¸´æ—¶è·¯å¾„ï¼š" + System.getProperty("java.io.tmpdir")); // Javaè¾“å…¥è¾“å‡ºä¸´æ—¶è·¯å¾„
+		System.out.println("Javaç¼–è¯‘å™¨ï¼š" + System.getProperty("java.compiler")); // Javaç¼–è¯‘å™¨
+		System.out.println("Javaæ‰§è¡Œè·¯å¾„ï¼š" + System.getProperty("java.ext.dirs")); // Javaæ‰§è¡Œè·¯å¾„
+		System.out.println("æ“ä½œç³»ç»Ÿåç§°ï¼š" + System.getProperty("os.name")); // æ“ä½œç³»ç»Ÿåç§°
+		System.out.println("æ“ä½œç³»ç»Ÿçš„æ¶æ„ï¼š" + System.getProperty("os.arch")); // æ“ä½œç³»ç»Ÿçš„æ¶æ„
+		System.out.println("æ“ä½œç³»ç»Ÿç‰ˆæœ¬å·ï¼š" + System.getProperty("os.version")); // æ“ä½œç³»ç»Ÿç‰ˆæœ¬å·
+		System.out.println("æ–‡ä»¶åˆ†éš”ç¬¦ï¼š" + System.getProperty("file.separator")); // æ–‡ä»¶åˆ†éš”ç¬¦
+		System.out.println("è·¯å¾„åˆ†éš”ç¬¦ï¼š" + System.getProperty("path.separator")); // è·¯å¾„åˆ†éš”ç¬¦
+		System.out.println("ç›´çº¿åˆ†éš”ç¬¦ï¼š" + System.getProperty("line.separator")); // ç›´çº¿åˆ†éš”ç¬¦
+		System.out.println("æ“ä½œç³»ç»Ÿç”¨æˆ·åï¼š" + System.getProperty("user.name")); // ç”¨æˆ·å
+		System.out.println("æ“ä½œç³»ç»Ÿç”¨æˆ·çš„ä¸»ç›®å½•ï¼š" + System.getProperty("user.home")); // ç”¨æˆ·çš„ä¸»ç›®å½•
+		System.out.println("å½“å‰ç¨‹åºæ‰€åœ¨ç›®å½•ï¼š" + System.getProperty("user.dir")); // å½“å‰ç¨‹åºæ‰€åœ¨ç›®å½•
 */	
 		
 	/*	Runtime run=Runtime.getRuntime();
@@ -85,42 +85,42 @@ public class Test {
 		int hour = calender.get(Calendar.HOUR_OF_DAY);
 		int minute = calender.get(Calendar.MINUTE);
 		int second = calender.get(Calendar.SECOND);
-		System.out.println(year + "Äê" + month + "ÔÂ" + day + "ÈÕ ĞÇÆÚ" + week + " "
+		System.out.println(year + "å¹´" + month + "æœˆ" + day + "æ—¥ æ˜ŸæœŸ" + week + " "
 				+ hour + ":" + minute + ":" + second);*/
 
-		/*// Ê®½øÖÆ×ª¶ş½øÖÆ
+		/*// åè¿›åˆ¶è½¬äºŒè¿›åˆ¶
 		String binaryString = Integer.toBinaryString(100);
 		System.out.println(binaryString); // 1100100
-		// Ê®½øÖÆ×ªÊ®Áù½øÖÆ
+		// åè¿›åˆ¶è½¬åå…­è¿›åˆ¶
 		String hexString = Integer.toHexString(100);
 		System.out.println(hexString); // 64
 
-		// Ê®½øÖÆ×ª°Ë½øÖÆ
+		// åè¿›åˆ¶è½¬å…«è¿›åˆ¶
 		String octalString = Integer.toOctalString(100);
 		System.out.println(octalString); // 144
 
 
-		// ×Ö·û´®×ª¶ÔÓ¦µÄ½øÖÆ
+		// å­—ç¬¦ä¸²è½¬å¯¹åº”çš„è¿›åˆ¶
 		int parseInt3 = Integer.parseInt(octalString);
 		System.out.println(parseInt3);
-		// ¶ş½øÖÆ×ªÊ®½øÖÆ
+		// äºŒè¿›åˆ¶è½¬åè¿›åˆ¶
 		int parseInt4 = Integer.parseInt(binaryString, 2);
 		System.out.println(parseInt4);
-		// Ê®Áù½øÖÆ×ªÊ®½øÖÆ
+		// åå…­è¿›åˆ¶è½¬åè¿›åˆ¶
 		int parseInt5 = Integer.parseInt(hexString, 16);
 		System.out.println(parseInt5);
-		// °Ë½øÖÆ×ªÊ®½øÖÆ
+		// å…«è¿›åˆ¶è½¬åè¿›åˆ¶
 		int parseInt6 = Integer.parseInt(octalString, 8);
 		System.out.println(parseInt6);
 		
-		Integer x = new Integer(5);//×°Ïä
-		int intValue = x.intValue(); //²ğÏä
+		Integer x = new Integer(5);//è£…ç®±
+		int intValue = x.intValue(); //æ‹†ç®±
 
-		// 5.0¼ò»¯ÊéĞ´
-		// ×Ô¶¯×°Ïä¡£new Integer(5);
+		// 5.0ç®€åŒ–ä¹¦å†™
+		// è‡ªåŠ¨è£…ç®±ã€‚new Integer(5);
 		Integer y = 5;  
-		// ¶ÔÏó¼ÓÕûÊı,x ½øĞĞÁË×Ô¶¯²ğÏä,±ä³ÉÁËint ĞÍ ºÍ5½øĞĞ¼Ó·¨ÔËËãºóÔÙ½«ºÍ½øĞĞ×°Ïä¸³¸øx¡£
-		y = y + 5; // ÊÇÍ¨¹ıInteger.intValue() ·½·¨½øĞĞ²ğÏä
+		// å¯¹è±¡åŠ æ•´æ•°,x è¿›è¡Œäº†è‡ªåŠ¨æ‹†ç®±,å˜æˆäº†int å‹ å’Œ5è¿›è¡ŒåŠ æ³•è¿ç®—åå†å°†å’Œè¿›è¡Œè£…ç®±èµ‹ç»™xã€‚
+		y = y + 5; // æ˜¯é€šè¿‡Integer.intValue() æ–¹æ³•è¿›è¡Œæ‹†ç®±
 */		
 		/*Properties properties = System.getProperties();
 		properties.list(System.out);
