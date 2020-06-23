@@ -11,6 +11,8 @@ public class GitConfict {
 		System.err.println("remote add");
 		
 		System.err.println("local add");
+		
+		System.err.println("remote add2");
 	}
 
 }
