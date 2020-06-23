@@ -1,2 +1,2 @@
 # StartZ
-  Simaple demo
+  simple demo
