@@ -9,12 +9,12 @@ public class Demo1 {
 		int temp=random.nextInt(11);
 		while (true) {
 			Scanner sc= new Scanner(System.in);
-			System.out.println("ÇëÊäÈëÒª²ÂµÄÊı:"+temp);
+			System.out.println("è¯·è¾“å…¥è¦çŒœçš„æ•°:"+temp);
 			if(temp==sc.nextInt()){
-				System.out.println("²Â¶ÔÁË!");
+				System.out.println("çŒœå¯¹äº†!");
 				break;
 			}else {
-				System.out.println("¼ÌĞø²Â~");
+				System.out.println("ç»§ç»­çŒœ~");
 			}
 		}
 	}

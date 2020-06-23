@@ -7,55 +7,55 @@ import java.util.regex.Pattern;
 public class TypeTest {
 /*	public static void main(String[] args) {
 		// byte
-		System.out.println("»ù±¾ÀàĞÍ£ºbyte ¶ş½øÖÆÎ»Êı£º" + Byte.SIZE);
-		System.out.println("°ü×°Àà£ºjava.lang.Byte");
-		System.out.println("×îĞ¡Öµ£ºByte.MIN_VALUE=" + Byte.MIN_VALUE);
-		System.out.println("×î´óÖµ£ºByte.MAX_VALUE=" + Byte.MAX_VALUE);
+		System.out.println("åŸºæœ¬ç±»å‹ï¼šbyte äºŒè¿›åˆ¶ä½æ•°ï¼š" + Byte.SIZE);
+		System.out.println("åŒ…è£…ç±»ï¼šjava.lang.Byte");
+		System.out.println("æœ€å°å€¼ï¼šByte.MIN_VALUE=" + Byte.MIN_VALUE);
+		System.out.println("æœ€å¤§å€¼ï¼šByte.MAX_VALUE=" + Byte.MAX_VALUE);
 		System.out.println();
 
 		// short
-		System.out.println("»ù±¾ÀàĞÍ£ºshort ¶ş½øÖÆÎ»Êı£º" + Short.SIZE);
-		System.out.println("°ü×°Àà£ºjava.lang.Short");
-		System.out.println("×îĞ¡Öµ£ºShort.MIN_VALUE=" + Short.MIN_VALUE);
-		System.out.println("×î´óÖµ£ºShort.MAX_VALUE=" + Short.MAX_VALUE);
+		System.out.println("åŸºæœ¬ç±»å‹ï¼šshort äºŒè¿›åˆ¶ä½æ•°ï¼š" + Short.SIZE);
+		System.out.println("åŒ…è£…ç±»ï¼šjava.lang.Short");
+		System.out.println("æœ€å°å€¼ï¼šShort.MIN_VALUE=" + Short.MIN_VALUE);
+		System.out.println("æœ€å¤§å€¼ï¼šShort.MAX_VALUE=" + Short.MAX_VALUE);
 		System.out.println();
 
 		// int
-		System.out.println("»ù±¾ÀàĞÍ£ºint ¶ş½øÖÆÎ»Êı£º" + Integer.SIZE);
-		System.out.println("°ü×°Àà£ºjava.lang.Integer");
-		System.out.println("×îĞ¡Öµ£ºInteger.MIN_VALUE=" + Integer.MIN_VALUE);
-		System.out.println("×î´óÖµ£ºInteger.MAX_VALUE=" + Integer.MAX_VALUE);
+		System.out.println("åŸºæœ¬ç±»å‹ï¼šint äºŒè¿›åˆ¶ä½æ•°ï¼š" + Integer.SIZE);
+		System.out.println("åŒ…è£…ç±»ï¼šjava.lang.Integer");
+		System.out.println("æœ€å°å€¼ï¼šInteger.MIN_VALUE=" + Integer.MIN_VALUE);
+		System.out.println("æœ€å¤§å€¼ï¼šInteger.MAX_VALUE=" + Integer.MAX_VALUE);
 		System.out.println();
 
 		// long
-		System.out.println("»ù±¾ÀàĞÍ£ºlong ¶ş½øÖÆÎ»Êı£º" + Long.SIZE);
-		System.out.println("°ü×°Àà£ºjava.lang.Long");
-		System.out.println("×îĞ¡Öµ£ºLong.MIN_VALUE=" + Long.MIN_VALUE);
-		System.out.println("×î´óÖµ£ºLong.MAX_VALUE=" + Long.MAX_VALUE);
+		System.out.println("åŸºæœ¬ç±»å‹ï¼šlong äºŒè¿›åˆ¶ä½æ•°ï¼š" + Long.SIZE);
+		System.out.println("åŒ…è£…ç±»ï¼šjava.lang.Long");
+		System.out.println("æœ€å°å€¼ï¼šLong.MIN_VALUE=" + Long.MIN_VALUE);
+		System.out.println("æœ€å¤§å€¼ï¼šLong.MAX_VALUE=" + Long.MAX_VALUE);
 		System.out.println();
 
 		// float
-		System.out.println("»ù±¾ÀàĞÍ£ºfloat ¶ş½øÖÆÎ»Êı£º" + Float.SIZE);
-		System.out.println("°ü×°Àà£ºjava.lang.Float");
-		System.out.println("×îĞ¡Öµ£ºFloat.MIN_VALUE=" + Float.MIN_VALUE);
-		System.out.println("×î´óÖµ£ºFloat.MAX_VALUE=" + Float.MAX_VALUE);
+		System.out.println("åŸºæœ¬ç±»å‹ï¼šfloat äºŒè¿›åˆ¶ä½æ•°ï¼š" + Float.SIZE);
+		System.out.println("åŒ…è£…ç±»ï¼šjava.lang.Float");
+		System.out.println("æœ€å°å€¼ï¼šFloat.MIN_VALUE=" + Float.MIN_VALUE);
+		System.out.println("æœ€å¤§å€¼ï¼šFloat.MAX_VALUE=" + Float.MAX_VALUE);
 		System.out.println();
 
 		// double
-		System.out.println("»ù±¾ÀàĞÍ£ºdouble ¶ş½øÖÆÎ»Êı£º" + Double.SIZE);
-		System.out.println("°ü×°Àà£ºjava.lang.Double");
-		System.out.println("×îĞ¡Öµ£ºDouble.MIN_VALUE=" + Double.MIN_VALUE);
-		System.out.println("×î´óÖµ£ºDouble.MAX_VALUE=" + Double.MAX_VALUE);
+		System.out.println("åŸºæœ¬ç±»å‹ï¼šdouble äºŒè¿›åˆ¶ä½æ•°ï¼š" + Double.SIZE);
+		System.out.println("åŒ…è£…ç±»ï¼šjava.lang.Double");
+		System.out.println("æœ€å°å€¼ï¼šDouble.MIN_VALUE=" + Double.MIN_VALUE);
+		System.out.println("æœ€å¤§å€¼ï¼šDouble.MAX_VALUE=" + Double.MAX_VALUE);
 		System.out.println();
 
 		// char
-		System.out.println("»ù±¾ÀàĞÍ£ºchar ¶ş½øÖÆÎ»Êı£º" + Character.SIZE);
-		System.out.println("°ü×°Àà£ºjava.lang.Character");
-		// ÒÔÊıÖµĞÎÊ½¶ø²»ÊÇ×Ö·ûĞÎÊ½½«Character.MIN_VALUEÊä³öµ½¿ØÖÆÌ¨
-		System.out.println("×îĞ¡Öµ£ºCharacter.MIN_VALUE="
+		System.out.println("åŸºæœ¬ç±»å‹ï¼šchar äºŒè¿›åˆ¶ä½æ•°ï¼š" + Character.SIZE);
+		System.out.println("åŒ…è£…ç±»ï¼šjava.lang.Character");
+		// ä»¥æ•°å€¼å½¢å¼è€Œä¸æ˜¯å­—ç¬¦å½¢å¼å°†Character.MIN_VALUEè¾“å‡ºåˆ°æ§åˆ¶å°
+		System.out.println("æœ€å°å€¼ï¼šCharacter.MIN_VALUE="
 				+ (int) Character.MIN_VALUE);
-		// ÒÔÊıÖµĞÎÊ½¶ø²»ÊÇ×Ö·ûĞÎÊ½½«Character.MAX_VALUEÊä³öµ½¿ØÖÆÌ¨
-		System.out.println("×î´óÖµ£ºCharacter.MAX_VALUE="
+		// ä»¥æ•°å€¼å½¢å¼è€Œä¸æ˜¯å­—ç¬¦å½¢å¼å°†Character.MAX_VALUEè¾“å‡ºåˆ°æ§åˆ¶å°
+		System.out.println("æœ€å¤§å€¼ï¼šCharacter.MAX_VALUE="
 				+ (int) Character.MAX_VALUE);
 
 	}
@@ -70,20 +70,20 @@ public class TypeTest {
 		
 		try { 
 	         System.out.println(new Date( )+"\n"); 
-	         Thread.sleep(1000*3);   // ĞİÃß3Ãë
+	         Thread.sleep(1000*3);   // ä¼‘çœ 3ç§’
 	         System.out.println(new Date( )); 
 	      } catch (Exception e) { 
 	          System.out.println("Got an exception!"); 
 	      }*/
 		
-		 // °´Ö¸¶¨Ä£Ê½ÔÚ×Ö·û´®²éÕÒ
+		 // æŒ‰æŒ‡å®šæ¨¡å¼åœ¨å­—ç¬¦ä¸²æŸ¥æ‰¾
 	      String line = "This order was placed for QT3000! OK?";
 	      String pattern = "(.*)(\\d+)(.*)";
 
-	      // ´´½¨ Pattern ¶ÔÏó
+	      // åˆ›å»º Pattern å¯¹è±¡
 	      Pattern r = Pattern.compile(pattern);
 
-	      // ÏÖÔÚ´´½¨ matcher ¶ÔÏó
+	      // ç°åœ¨åˆ›å»º matcher å¯¹è±¡
 	      Matcher m = r.matcher(line);
 	      if (m.find( )) {
 	         System.out.println("Found value: " + m.group(0) );

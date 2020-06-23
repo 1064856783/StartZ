@@ -2,20 +2,20 @@ package test;
 
 import java.lang.reflect.Array;
 /**
- *	JavaÖÐ¶¯Ì¬ÐÞ¸ÄÊý×é(Array)µÄ´óÐ¡
+ *	Javaä¸­åŠ¨æ€ä¿®æ”¹æ•°ç»„(Array)çš„å¤§å°
  */
 public class DynamicArrayTest {
 	 
     private static Object resizeArray (Object oldArray, int newSize) {
-        //»ñÈ¡Êý×éoldArrayµÄ³¤¶È
+        //èŽ·å–æ•°ç»„oldArrayçš„é•¿åº¦
         int oldSize = Array.getLength(oldArray);
-        //»ñÈ¡Êý×éoldArrayµÄÔªËØÀàÐÍ
+        //èŽ·å–æ•°ç»„oldArrayçš„å…ƒç´ ç±»åž‹
         Class elementType = oldArray.getClass().getComponentType();
-        //ÊµÀýÒ»¸öÐÂµÄÊý×é ÀàÐÍºÍoldArrayµÄÒ»Ñù ³¤¶È²ÎÊý´«ÈëµÄnewSize
+        //å®žä¾‹ä¸€ä¸ªæ–°çš„æ•°ç»„ ç±»åž‹å’ŒoldArrayçš„ä¸€æ · é•¿åº¦å‚æ•°ä¼ å…¥çš„newSize
         Object newArray = Array.newInstance(elementType,newSize);
-        //µÃµ½ÐÂÊý×énewArray ºÍoldArrayÁ½¸öÖÐ³¤¶È×î¶ÌµÄ£¬²¢°Ñ³¤¶È·µ»Ø¸øpreserveLength
+        //å¾—åˆ°æ–°æ•°ç»„newArray å’ŒoldArrayä¸¤ä¸ªä¸­é•¿åº¦æœ€çŸ­çš„ï¼Œå¹¶æŠŠé•¿åº¦è¿”å›žç»™preserveLength
         int preserveLength = Math.min(oldSize,newSize);
-        //Êý×éÄÚÈÝ¸´ÖÆ
+        //æ•°ç»„å†…å®¹å¤åˆ¶
         if (preserveLength > 0) {
             System.arraycopy (oldArray, 0, newArray, 0, preserveLength);
         }

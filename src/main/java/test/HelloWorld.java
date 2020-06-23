@@ -7,8 +7,8 @@ import java.util.Date;
 public class HelloWorld {
 	public static void main(String []args) {
 	
-		//textArea 换行处理
-		String str = "实打实的\r\n,\r\nss\na\n";
+		//textArea 鎹㈣澶勭悊
+		String str = "瀹炴墦瀹炵殑\r\n,\r\nss\na\n";
 		System.out.println(str);
 		str=str.replaceAll("\r\n", "<br/>");
 		str=str.replaceAll("\n", "<br/>");

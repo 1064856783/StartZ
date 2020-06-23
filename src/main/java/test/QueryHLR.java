@@ -28,29 +28,29 @@ public class QueryHLR {
     
 	public static void main(String[] args) throws Exception {
 		/*
-		 * System.out.println("µ÷ÓÃ["+Thread.currentThread().getStackTrace()[1].
-		 * getMethodName()+"]·½·¨"); StackTraceElement[]
+		 * System.out.println("è°ƒç”¨["+Thread.currentThread().getStackTrace()[1].
+		 * getMethodName()+"]æ–¹æ³•"); StackTraceElement[]
 		 * stackTrace=Thread.currentThread().getStackTrace(); new Test06().test();
 		 */
 		Scanner in =new Scanner(System.in);
 		String filePath = "E:\\";
 		String fileName = "new.txt";
-		System.err.print("ÇëÊäÈë²éÑ¯ÇøºÅTXTÎÄ¼şµÄÃû³Æ,°´»Ø³µÍê³ÉÊäÈë£º");
+		System.err.print("è¯·è¾“å…¥æŸ¥è¯¢åŒºå·TXTæ–‡ä»¶çš„åç§°,æŒ‰å›è½¦å®Œæˆè¾“å…¥ï¼š");
 		String tempInput = in.next();
 		if (StringUtils.isNotBlank(tempInput)) {
 			fileName = tempInput;
 		}
-		System.err.println("ÊäÈëµÄÎÄ¼şÃûÎª£º"+fileName);
+		System.err.println("è¾“å…¥çš„æ–‡ä»¶åä¸ºï¼š"+fileName);
 		StringBuilder readPath = new StringBuilder(filePath+fileName.trim()+".txt");
-		System.out.println("µ¼ÈëÎÄ¼ş£º"+readPath);
+		System.out.println("å¯¼å…¥æ–‡ä»¶ï¼š"+readPath);
 		InputStream read = null;
 		try {
 			read = new FileInputStream(readPath.toString());
 		} catch (FileNotFoundException e) {
-			System.err.println("³ÌĞòÍË³ö,ÇëÖØÊÔ£º"+e.getMessage());
+			System.err.println("ç¨‹åºé€€å‡º,è¯·é‡è¯•ï¼š"+e.getMessage());
 			return ;
 		}catch (Exception e) {
-			System.err.println("Î´Öª´íÎó,³ÌĞòÍË³ö,ÇëÖØÊÔ£º"+e.getMessage());
+			System.err.println("æœªçŸ¥é”™è¯¯,ç¨‹åºé€€å‡º,è¯·é‡è¯•ï¼š"+e.getMessage());
 			return ;
 		}
 		List<String> resultList = new ArrayList<String>();
@@ -58,7 +58,7 @@ public class QueryHLR {
 		String[] readFileLines = readLineStream(read);
 		List<String> readFileLinesList =new ArrayList<String>(Arrays.asList(readFileLines));
 		int orginNum = readFileLinesList.size();
-		//ÖØÊÔ´ÎÊı
+		//é‡è¯•æ¬¡æ•°
 		int reTryNum = 10;
 		try {
 			/*
@@ -70,15 +70,15 @@ public class QueryHLR {
 			 * System.out.println(stringss.toString());
 			 */
 			HttpClient client = new HttpClient();
-			// ÉèÖÃ³¬Ê±Ê±¼ä
+			// è®¾ç½®è¶…æ—¶æ—¶é—´
 			client.getHttpConnectionManager().getParams().setConnectionTimeout(reTryNum * 1000);
 			client.getHttpConnectionManager().getParams().setSoTimeout(reTryNum * 1000);
-			// ÉèÖÃ²ÎÊı
+			// è®¾ç½®å‚æ•°
 //			StringBuilder tempList = new StringBuilder();
-//			long startTime = System.currentTimeMillis(); System.currentTimeMillis()-startTime > 300000//×î¶à²éÑ¯5·ÖÖÓ
+//			long startTime = System.currentTimeMillis(); System.currentTimeMillis()-startTime > 300000//æœ€å¤šæŸ¥è¯¢5åˆ†é’Ÿ
 			int curReTryNum = 0;
 			while (readFileLinesList.size() >= 1&&curReTryNum<=reTryNum) {
-				System.out.println("µÚ"+curReTryNum+"´ÎÖØÊÔ,Ê£ÓàÊıÁ¿:"+readFileLinesList.size());
+				System.out.println("ç¬¬"+curReTryNum+"æ¬¡é‡è¯•,å‰©ä½™æ•°é‡:"+readFileLinesList.size());
 				curReTryNum++;
 //				System.out.println("While!!");
 				for (int i = 0; i < readFileLinesList.size(); i++) {
@@ -108,12 +108,12 @@ public class QueryHLR {
 						client.executeMethod(getMethod);
 						String retHtml = new String(getMethod.getResponseBodyAsString().getBytes("ISO-8859-1"), "gb2312");
 						String sIndex = "<TR class=tdc bgcolor=#EFF1F3>\r\n" 
-										+ "		<TD align=\"center\">Çø ºÅ</TD>\r\n"
+										+ "		<TD align=\"center\">åŒº å·</TD>\r\n"
 										+ "		<TD align=\"center\" class=tdc2>";
 						int sNum = retHtml.indexOf(sIndex) + sIndex.length();
 						String region = retHtml.substring(sNum, sNum + 4).replaceAll("[iv=\"|<|/TD]", "");
 						if(StringUtils.isBlank(region)) {
-							String sIndex2 = "<TD align=\"center\">Çø ºÅ</TD>\r\n" + 
+							String sIndex2 = "<TD align=\"center\">åŒº å·</TD>\r\n" + 
 									"<!-- <td></td> --><TD align=\"center\" class=tdc2>";
 							int sNum2 = retHtml.indexOf(sIndex2) + sIndex2.length();
 							region = retHtml.substring(sNum2, sNum2 + 4).replaceAll("[iv=\"|<|/TD]", "");
@@ -133,7 +133,7 @@ public class QueryHLR {
 					
 					/*String retHtml = new String(getMethod.getResponseBodyAsString().getBytes("ISO-8859-1"), "gb2312");
 					String sIndex = "<TR class=tdc bgcolor=#EFF1F3>\r\n" 
-									+ "		<TD align=\"center\">Çø ºÅ</TD>\r\n"
+									+ "		<TD align=\"center\">åŒº å·</TD>\r\n"
 									+ "		<TD align=\"center\" class=tdc2>";
 					int sNum = retHtml.indexOf(sIndex) + sIndex.length();
 					String region = retHtml.substring(sNum, sNum + 4).replaceAll("[iv=\"|<|/TD]", "");
@@ -148,13 +148,13 @@ public class QueryHLR {
 				}
 			}
 			System.out.println("-----------------------");
-			System.out.println("²éÑ¯½áÊø,Ê£ÓàÊıÁ¿:"+readFileLinesList.size());
+			System.out.println("æŸ¥è¯¢ç»“æŸ,å‰©ä½™æ•°é‡:"+readFileLinesList.size());
 			if (readFileLinesList.size() > 0) {
 				errorList.addAll(readFileLinesList);
 			}
 //			String[] sda = tempList.toString().split("#");
 //			List<String> stringB = Arrays.asList(sda);
-			//JDK1.7ÒÔºóArray.sortÓÅ»¯ÁËlegacyMergeSort(´«Í³¹é²¢ÅÅĞò) ¸ÄÓÃ Timsort
+			//JDK1.7ä»¥åArray.sortä¼˜åŒ–äº†legacyMergeSort(ä¼ ç»Ÿå½’å¹¶æ’åº) æ”¹ç”¨ Timsort
 			/*System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
 			Collections.sort(resultList, new Comparator<String>() {
 				@Override
@@ -176,15 +176,15 @@ public class QueryHLR {
 				writeFile(filePath+"error_"+curTime+".txt", errorList);
 			}
 			System.out.println("-----------------------");
-			System.out.println("×Ü¹²ÊıÁ¿£º"+orginNum);
+			System.out.println("æ€»å…±æ•°é‡ï¼š"+orginNum);
 			System.out.println("-----------------------");
-			System.out.println("Íê³ÉÊıÁ¿£º"+resultList.size());
+			System.out.println("å®Œæˆæ•°é‡ï¼š"+resultList.size());
 			System.out.println("-----------------------");
-			System.out.println("Ê§°ÜÊıÁ¿£º"+errorList.size());
+			System.out.println("å¤±è´¥æ•°é‡ï¼š"+errorList.size());
 			System.out.println("-----------------------");
-			System.out.println("²éÑ¯Íê³É£¡");
+			System.out.println("æŸ¥è¯¢å®Œæˆï¼");
 			System.out.println("-----------------------");
-			System.out.println("ÎÄ¼şÉú³ÉÄ¿Â¼£º"+filePath+"\nÊ±¼ä´ÁÎª£º"+curTime);
+			System.out.println("æ–‡ä»¶ç”Ÿæˆç›®å½•ï¼š"+filePath+"\næ—¶é—´æˆ³ä¸ºï¼š"+curTime);
 			System.out.println("-----------------------");
 			read.close();
 		}
@@ -229,10 +229,10 @@ public class QueryHLR {
 	/*
 	 * private void test() { StackTraceElement[]
 	 * stackTraced=Thread.currentThread().getStackTrace();
-	 * System.out.println("µ÷ÓÃ["+Thread.currentThread().getStackTrace()[2].
-	 * getClassName()+"]Àà");
-	 * System.out.println("µ÷ÓÃ["+Thread.currentThread().getStackTrace()[2].
-	 * getMethodName()+"]·½·¨");
+	 * System.out.println("è°ƒç”¨["+Thread.currentThread().getStackTrace()[2].
+	 * getClassName()+"]ç±»");
+	 * System.out.println("è°ƒç”¨["+Thread.currentThread().getStackTrace()[2].
+	 * getMethodName()+"]æ–¹æ³•");
 	 * 
 	 * }
 	 */

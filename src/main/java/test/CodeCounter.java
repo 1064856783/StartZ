@@ -8,16 +8,16 @@ import java.io.IOException;
 
 public class CodeCounter {
     
-    static long normalLines = 0;//Õı³£´úÂëĞĞ
-    static long commentLines = 0;//×¢ÊÍĞĞ
-    static long whiteLines = 0;//¿Õ°×ĞĞ
+    static long normalLines = 0;//æ­£å¸¸ä»£ç è¡Œ
+    static long commentLines = 0;//æ³¨é‡Šè¡Œ
+    static long whiteLines = 0;//ç©ºç™½è¡Œ
     
     public static void main(String[] args) {
-        //ÕÒµ½Ä³¸öÎÄ¼ş¼Ğ,¸ÃÎÄ¼ş¼ĞÏÂÃæÔÚÃ»ÓĞÎÄ¼ş¼Ğ£¬ÕâÀïÃ»ÓĞĞ´µİ¹é´¦Àí²»ÔÚÍ¬Ò»ÎÄ¼ş¼ĞµÄÎÄ¼ş
+        //æ‰¾åˆ°æŸä¸ªæ–‡ä»¶å¤¹,è¯¥æ–‡ä»¶å¤¹ä¸‹é¢åœ¨æ²¡æœ‰æ–‡ä»¶å¤¹ï¼Œè¿™é‡Œæ²¡æœ‰å†™é€’å½’å¤„ç†ä¸åœ¨åŒä¸€æ–‡ä»¶å¤¹çš„æ–‡ä»¶
         File f = new File("E:\\");
         File[] codeFiles = f.listFiles();
         for(File child : codeFiles){
-            //Ö»Í³¼ÆjavaÎÄ¼ş
+            //åªç»Ÿè®¡javaæ–‡ä»¶
             if(child.getName().matches(".*\\.java$")) {
                 parse(child);
             }
@@ -31,27 +31,27 @@ public class CodeCounter {
 
     private static void parse(File f) {
         BufferedReader br = null;
-        //±íÊ¾ÊÇ·ñÎª×¢ÊÍ¿ªÊ¼
+        //è¡¨ç¤ºæ˜¯å¦ä¸ºæ³¨é‡Šå¼€å§‹
         boolean comment = false;
         try {
             br = new BufferedReader(new FileReader(f));
             String line = "";
             while((line = br.readLine()) != null) {
-                //È¥µô×¢ÊÍ·û/*Ç°Ãæ¿ÉÄÜ³öÏÖµÄ¿Õ°×
+                //å»æ‰æ³¨é‡Šç¬¦/*å‰é¢å¯èƒ½å‡ºç°çš„ç©ºç™½
                 line = line.trim();
-                //¿ÕĞĞ ÒòÎªreadLine()½«×Ö·û´®È¡³öÀ´Ê±£¬ÒÑ¾­È¥µôÁË»»ĞĞ·û\n
-                //ËùÒÔ²»ÊÇ"^[\\s&&[^\\n]]*\\n$"
+                //ç©ºè¡Œ å› ä¸ºreadLine()å°†å­—ç¬¦ä¸²å–å‡ºæ¥æ—¶ï¼Œå·²ç»å»æ‰äº†æ¢è¡Œç¬¦\n
+                //æ‰€ä»¥ä¸æ˜¯"^[\\s&&[^\\n]]*\\n$"
                 if(line.matches("^[\\s&&[^\\n]]*$")) {
                     whiteLines ++;
                 } else if (line.startsWith("/*") && !line.endsWith("*/")) {
-                    //Í³¼Æ¶àĞĞ/*****/
+                    //ç»Ÿè®¡å¤šè¡Œ/*****/
                     commentLines ++;
                     comment = true;    
                 } else if (line.startsWith("/*") && line.endsWith("*/")) {
-                    //Í³¼ÆÒ»ĞĞ/**/
+                    //ç»Ÿè®¡ä¸€è¡Œ/**/
                     commentLines ++;
                 } else if (true == comment) {
-                    //Í³¼Æ*/
+                    //ç»Ÿè®¡*/
                     commentLines ++;
                     if(line.endsWith("*/")) {
                         comment = false;

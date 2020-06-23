@@ -5,10 +5,10 @@ import java.io.*;
 public class BRRead {
 	public static void main(String args[]) throws IOException {
 		/*Character c;
-		// Ê¹ÓÃ System.in ´´½¨ BufferedReader
+		// ä½¿ç”¨ System.in åˆ›å»º BufferedReader
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter characters, 'q' to quit.");
-		// ¶ÁÈ¡×Ö·û
+		// è¯»å–å­—ç¬¦
 		do {
 			c = (char) br.read();
 			System.out.print(c + "-");
@@ -43,43 +43,43 @@ public class BRRead {
 		
 		File f = new File("a.txt");
 		FileOutputStream fop = new FileOutputStream(f);
-		// ¹¹½¨FileOutputStream¶ÔÏó,ÎÄ¼ş²»´æÔÚ»á×Ô¶¯ĞÂ½¨
+		// æ„å»ºFileOutputStreamå¯¹è±¡,æ–‡ä»¶ä¸å­˜åœ¨ä¼šè‡ªåŠ¨æ–°å»º
 		
 		OutputStreamWriter writer = new OutputStreamWriter(fop, "UTF-8");
-		// ¹¹½¨OutputStreamWriter¶ÔÏó,²ÎÊı¿ÉÒÔÖ¸¶¨±àÂë,Ä¬ÈÏÎª²Ù×÷ÏµÍ³Ä¬ÈÏ±àÂë,windowsÉÏÊÇgbk
+		// æ„å»ºOutputStreamWriterå¯¹è±¡,å‚æ•°å¯ä»¥æŒ‡å®šç¼–ç ,é»˜è®¤ä¸ºæ“ä½œç³»ç»Ÿé»˜è®¤ç¼–ç ,windowsä¸Šæ˜¯gbk
 		
-		writer.append("ÖĞÎÄÊäÈë");
-		// Ğ´Èëµ½»º³åÇø
+		writer.append("ä¸­æ–‡è¾“å…¥");
+		// å†™å…¥åˆ°ç¼“å†²åŒº
 		
 		writer.append("\r\n");
-		//»»ĞĞ
+		//æ¢è¡Œ
 		
 		writer.append("English");
-		// Ë¢ĞÂ»º´æ³å,Ğ´Èëµ½ÎÄ¼ş,Èç¹ûÏÂÃæÒÑ¾­Ã»ÓĞĞ´ÈëµÄÄÚÈİÁË,Ö±½ÓcloseÒ²»áĞ´Èë
+		// åˆ·æ–°ç¼“å­˜å†²,å†™å…¥åˆ°æ–‡ä»¶,å¦‚æœä¸‹é¢å·²ç»æ²¡æœ‰å†™å…¥çš„å†…å®¹äº†,ç›´æ¥closeä¹Ÿä¼šå†™å…¥
 		
 		writer.close();
-		//¹Ø±ÕĞ´ÈëÁ÷,Í¬Ê±»á°Ñ»º³åÇøÄÚÈİĞ´ÈëÎÄ¼ş,ËùÒÔÉÏÃæµÄ×¢ÊÍµô
+		//å…³é—­å†™å…¥æµ,åŒæ—¶ä¼šæŠŠç¼“å†²åŒºå†…å®¹å†™å…¥æ–‡ä»¶,æ‰€ä»¥ä¸Šé¢çš„æ³¨é‡Šæ‰
 		
 		fop.close();
-		// ¹Ø±ÕÊä³öÁ÷,ÊÍ·ÅÏµÍ³×ÊÔ´
+		// å…³é—­è¾“å‡ºæµ,é‡Šæ”¾ç³»ç»Ÿèµ„æº
 
 		FileInputStream fip = new FileInputStream(f);
-		// ¹¹½¨FileInputStream¶ÔÏó
+		// æ„å»ºFileInputStreamå¯¹è±¡
 		
 		InputStreamReader reader = new InputStreamReader(fip, "UTF-8");
-		// ¹¹½¨InputStreamReader¶ÔÏó,±àÂëÓëĞ´ÈëÏàÍ¬
+		// æ„å»ºInputStreamReaderå¯¹è±¡,ç¼–ç ä¸å†™å…¥ç›¸åŒ
 
 		StringBuffer sb = new StringBuffer();
 		while (reader.ready()) {
 			sb.append((char) reader.read());
-			// ×ª³Échar¼Óµ½StringBuffer¶ÔÏóÖĞ
+			// è½¬æˆcharåŠ åˆ°StringBufferå¯¹è±¡ä¸­
 		}
 		System.out.println(sb.toString());
 		reader.close();
-		// ¹Ø±Õ¶ÁÈ¡Á÷
+		// å…³é—­è¯»å–æµ
 		
 		fip.close();
-		// ¹Ø±ÕÊäÈëÁ÷,ÊÍ·ÅÏµÍ³×ÊÔ´
+		// å…³é—­è¾“å…¥æµ,é‡Šæ”¾ç³»ç»Ÿèµ„æº
 
 	}
 }

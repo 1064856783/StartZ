@@ -1,26 +1,26 @@
 package test;
 
 public class MaximumTest {
-	// ±È½ÏÈý¸öÖµ²¢·µ»Ø×î´óÖµ
+	// æ¯”è¾ƒä¸‰ä¸ªå€¼å¹¶è¿”å›žæœ€å¤§å€¼
 	public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
-		T max = x; // ¼ÙÉèxÊÇ³õÊ¼×î´óÖµ
+		T max = x; // å‡è®¾xæ˜¯åˆå§‹æœ€å¤§å€¼
 		if (y.compareTo(max) > 0) {
-			max = y; //y ¸ü´ó
+			max = y; //y æ›´å¤§
 		}
 		if (z.compareTo(max) > 0) {
-			max = z; // ÏÖÔÚ z ¸ü´ó           
+			max = z; // çŽ°åœ¨ z æ›´å¤§           
 		}
-		return max; // ·µ»Ø×î´ó¶ÔÏó
+		return max; // è¿”å›žæœ€å¤§å¯¹è±¡
 	}
 
 	public static void main(String args[]) {
-		System.out.printf("%d, %d ºÍ %d ÖÐ×î´óµÄÊýÎª %d\n\n", 3, 4, 5,
+		System.out.printf("%d, %d å’Œ %d ä¸­æœ€å¤§çš„æ•°ä¸º %d\n\n", 3, 4, 5,
 				maximum(3, 4, 5));
 
-		System.out.printf("%.1f, %.1f ºÍ %.1f ÖÐ×î´óµÄÊýÎª %.1f\n\n", 6.6, 8.8, 7.7,
+		System.out.printf("%.1f, %.1f å’Œ %.1f ä¸­æœ€å¤§çš„æ•°ä¸º %.1f\n\n", 6.6, 8.8, 7.7,
 				maximum(6.6, 8.8, 7.7));
 
-		System.out.printf("%s, %s ºÍ %s ÖÐ×î´óµÄÊýÎª %s\n", "pear", "apple", "orange",
+		System.out.printf("%s, %s å’Œ %s ä¸­æœ€å¤§çš„æ•°ä¸º %s\n", "pear", "apple", "orange",
 				maximum("pear", "apple", "orange"));
 	}
 }
